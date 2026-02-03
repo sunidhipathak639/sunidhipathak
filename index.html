@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunidhi Pathak | Software Engineer</title>
+    <title>Sunidhi Pathak | Software Engineer & Data Systems Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -38,14 +38,8 @@
             cursor: pointer;
         }
 
-        .project-card:hover {
-            border-color: #333;
-        }
-
-        .project-card.active {
-            border-color: #444;
-            background-color: #121212;
-        }
+        .project-card:hover { border-color: #333; }
+        .project-card.active { border-color: #444; background-color: #121212; }
 
         .content-area {
             max-height: 0;
@@ -55,26 +49,25 @@
         }
 
         .project-card.active .content-area {
-            max-height: 600px;
+            max-height: 800px;
             padding-bottom: 1.5rem;
         }
 
-        .project-card.active .chevron {
-            transform: rotate(90deg);
-        }
+        .project-card.active .chevron { transform: rotate(90deg); }
 
         .pointer-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 8px;
-            color: #888;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #d1d5db;
+            line-height: 1.6;
         }
 
         .pointer-item i {
-            font-size: 8px;
-            margin-top: 6px;
-            color: #555;
+            font-size: 6px;
+            margin-top: 8px;
+            color: #6b7280;
         }
 
         .icon-box {
@@ -98,7 +91,7 @@
 </head>
 <body class="py-12 px-6">
 
-    <div class="max-w-[450px] mx-auto">
+    <div class="max-w-[480px] mx-auto">
         
         <header class="text-center mb-12">
             <div class="relative inline-block mb-4">
@@ -118,12 +111,12 @@
             </div>
         </header>
 
-        <div class="space-y-3" id="links">
+        <div class="space-y-4" id="links">
             <!-- Projects Injected via JS -->
         </div>
 
         <footer class="mt-20 text-center">
-            <p class="text-[8px] text-zinc-800 uppercase tracking-[0.8em]">Architecting Data-Driven Systems</p>
+            <p class="text-[8px] text-zinc-800 uppercase tracking-[0.8em]">Turning Raw Data into Visual Insights</p>
         </footer>
     </div>
 
@@ -132,90 +125,90 @@
             { 
                 name: "Attendance Rocket", 
                 url: "https://attendance-rocket.vercel.app/",
-                tech: "Next.js • Payload CMS • PostgreSQL",
+                tech: "Next.js • Payload CMS • Data Tracking",
                 details: [
-                    "Architected a scalable relational database schema using Payload CMS to handle high-frequency attendance logging and user role hierarchies.",
-                    "Developed an interactive administrative dashboard for real-time visualization of workforce presence and historical attendance trends.",
-                    "Optimized complex data queries to generate automated weekly/monthly reports, reducing server processing time during data exports.",
-                    "Implemented secure authentication and precise RBAC (Role-Based Access Control) to protect sensitive employee records and audit trails."
+                    "Designed a central database to track thousands of daily employee attendance records accurately.",
+                    "Built a visual dashboard that helps managers see attendance trends and gaps at a glance.",
+                    "Created an automated reporting tool that cleans and organizes data into weekly summary files.",
+                    "Set up role-based access to ensure sensitive personal information is only seen by authorized staff."
                 ]
             },
             { 
                 name: "Mind HUB", 
                 url: "https://www.mymindhub.com/",
-                tech: "Next.js • Payload CMS",
+                tech: "Next.js • Payload CMS • Content Organization",
                 details: [
-                    "Engineered a dynamic content delivery system using Payload CMS to manage thousands of modular learning resources.",
-                    "Utilized Next.js Incremental Static Regeneration (ISR) to deliver high-speed performance while maintaining real-time data freshness.",
-                    "Built a customized search and filter engine using relational data fields to improve user content discovery by 60%.",
-                    "Integrated behavioral tracking analytics to monitor user journey data and optimize learning path flows."
-                ]
-            },
-            { 
-                name: "Uptik Solution", 
-                url: "https://www.uptiksolution.com",
-                tech: "Next.js • Node.js",
-                details: [
-                    "Designed high-conversion lead capture systems with automated data pipeline integration into centralized marketing CRMs.",
-                    "Developed custom middleware in Node.js to sanitize and validate incoming form data streams, ensuring database integrity.",
-                    "Maximized frontend performance by optimizing the critical rendering path, resulting in superior Core Web Vitals scores.",
-                    "Built a flexible, data-driven UI component library to enable rapid deployment of standardized analytical landing pages."
+                    "Engineered a smart library system to manage and categorize a massive dataset of learning materials.",
+                    "Simplified how users find information by building an advanced search tool with custom filters.",
+                    "Integrated user-tracking tools to collect data on which topics are most popular with learners.",
+                    "Optimized the platform to load large volumes of information instantly, improving user retention."
                 ]
             },
             { 
                 name: "Upgrade Masterclass", 
                 url: "https://demo-upgrad.kurage.in/",
-                tech: "Next.js • Strapi CMS",
+                tech: "Next.js • Strapi CMS • Information Architecture",
                 details: [
-                    "Orchestrated a large-scale headless CMS architecture via Strapi to manage extensive course catalogs and metadata.",
-                    "Implemented Server-Side Rendering (SSR) to ensure data-intensive pages remain SEO-friendly and highly performant.",
-                    "Developed a sophisticated filtering logic allowing users to navigate complex datasets based on specific instructor and course parameters.",
-                    "Automated asset management pipelines to optimize delivery of high-resolution educational media across diverse network speeds."
+                    "Organized complex course data—including videos, ratings, and instructor profiles—into one clean system.",
+                    "Built a real-time sorting engine that allows users to filter classes by date, price, and popularity.",
+                    "Ensured the student dashboard stays updated instantly whenever new data is added to the database.",
+                    "Fixed data loading issues to make the site work smoothly even for users with slow internet."
+                ]
+            },
+            { 
+                name: "Uptik Solution", 
+                url: "https://www.uptiksolution.com",
+                tech: "Next.js • Data Integration",
+                details: [
+                    "Built high-speed pages designed to capture lead data and feed it directly into sales databases.",
+                    "Created a data pipeline that automatically checks and cleans user information before saving it.",
+                    "Improved how the business tracks visitor clicks and movement across the website.",
+                    "Boosted site speed by 40%, ensuring no potential customer data is lost due to slow loading."
+                ]
+            },
+            { 
+                name: "MORF", 
+                url: "https://morf-new.vercel.app/customiser",
+                tech: "Next.js • Real-time State Management",
+                details: [
+                    "Developed a tool that tracks and saves thousands of user design choices in real-time.",
+                    "Built a way to turn visual customizations into structured data for manufacturing teams.",
+                    "Focused on making the interface clean so complex data looks simple and easy to understand.",
+                    "Created a 'save and return' feature that accurately stores a user's progress in the cloud."
                 ]
             },
             { 
                 name: "NCGRP Sweden", 
                 url: "https://www.ncgrp.se/", 
                 forceIcon: "fa-solid fa-building-shield",
-                tech: "Next.js • Security-Driven",
+                tech: "Next.js • Security & Reporting",
                 details: [
-                    "Built a secure corporate infrastructure with an emphasis on data encryption and protected information dissemination.",
-                    "Mapped complex organizational data structures into a multilingual interface for international regulatory compliance.",
-                    "Engineered a resilient Node.js backend to handle concurrent requests while maintaining low-latency data access.",
-                    "Designed clean, data-focused dashboards to present security audit results and compliance status to stakeholders."
-                ]
-            },
-            { 
-                name: "MORF", 
-                url: "https://morf-new.vercel.app/customiser",
-                tech: "Next.js • Complex State Logic",
-                details: [
-                    "Developed a high-complexity product customizer utilizing advanced React state management to handle deep JSON object configurations.",
-                    "Synchronized frontend design state with backend data models in real-time, ensuring zero discrepancy in final manufacturing data.",
-                    "Optimized 3D-heavy data rendering to maintain smooth UI responsiveness during intensive user interactions.",
-                    "Architected a robust RESTful API layer to process, validate, and store custom design metadata."
+                    "Built a corporate platform that presents complex security audit data in an easy-to-read format.",
+                    "Managed a multilingual database system to show data correctly for international users.",
+                    "Set up a secure portal where users can download protected safety and compliance reports.",
+                    "Organized large policy documents into a searchable system for quick information retrieval."
                 ]
             },
             { 
                 name: "Join With Me", 
                 url: "https://joinwithme.in/",
-                tech: "Next.js • Real-time Data",
+                tech: "Next.js • Social Data Flow",
                 details: [
-                    "Implemented a low-latency social data feed using WebSockets and asynchronous Node.js event handling.",
-                    "Optimized database indexing and query performance to handle rapid growth in user interaction and engagement logs.",
-                    "Designed an intuitive user dashboard that translates complex social engagement metrics into easy-to-read charts.",
-                    "Developed scalable API endpoints capable of handling high-volume concurrent traffic during peak activity periods."
+                    "Built a live notification system that updates users the moment new data arrives.",
+                    "Optimized the database to handle heavy traffic and thousands of user interactions every hour.",
+                    "Designed a personal dashboard for users to track their social growth and activity stats.",
+                    "Streamlined the data collection process to make user sign-ups fast and frictionless."
                 ]
             },
             { 
                 name: "Speakers Solution", 
                 url: "https://www.speakerssolutions.com.au/",
-                tech: "Next.js • Search Optimization",
+                tech: "Next.js • Sorting Algorithms",
                 details: [
-                    "Architected a high-performance talent search engine powered by multi-parameter filtering and sorting algorithms.",
-                    "Minimized client-side JavaScript overhead by offloading data processing to Next.js Server Components.",
-                    "Developed a seamless booking data pipeline that bridges user frontends with internal management systems.",
-                    "Enhanced perceived performance using sophisticated data-loading patterns like skeleton screens and pre-fetching logic."
+                    "Architected a talent search engine that sorts speakers based on complex criteria like location and expertise.",
+                    "Built an automated booking flow that bridges user requests with backend management tools.",
+                    "Reduced the amount of data the browser has to process, making the search experience feel 'instant'.",
+                    "Used visual loading states (skeletons) to keep users engaged while large datasets are being fetched."
                 ]
             }
         ];
@@ -226,28 +219,28 @@
             const domain = new URL(project.url).hostname;
             const card = document.createElement('div');
             card.className = "project-card stagger rounded-xl group";
-            card.style.animationDelay = `${index * 0.1}s`;
+            card.style.animationDelay = `${index * 0.08}s`;
             
             let iconMarkup;
             if(project.forceIcon) {
                 iconMarkup = `<i class="${project.forceIcon} text-zinc-500 text-sm"></i>`;
             } else {
                 const iconUrl = `https://icons.duckduckgo.com/ip3/${domain}.ico`;
-                iconMarkup = `<img src="${iconUrl}" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1005/1005141.png'">`;
+                iconMarkup = `<img src="${iconUrl}" class="w-5 h-5 opacity-70 group-hover:opacity-100" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2103/2103633.png'">`;
             }
 
             card.innerHTML = `
                 <div class="flex items-center p-4" onclick="toggleAccordion(this.parentElement)">
                     <div class="icon-box">${iconMarkup}</div>
                     <div class="ml-4 flex-grow">
-                        <h3 class="text-[13px] font-medium text-zinc-400 group-hover:text-white transition-colors">${project.name}</h3>
-                        <p class="text-[9px] text-zinc-600 font-mono tracking-tighter uppercase">${project.tech}</p>
+                        <h3 class="text-[14px] font-semibold text-zinc-300 group-hover:text-white transition-colors">${project.name}</h3>
+                        <p class="text-[10px] text-zinc-600 font-medium">${project.tech}</p>
                     </div>
-                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-700 chevron transition-transform duration-300"></i>
+                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-700 chevron transition-transform duration-300 mr-2"></i>
                 </div>
                 <div class="content-area px-14">
                     <div class="mb-4">
-                        <a href="${project.url}" target="_blank" class="text-[10px] text-zinc-400 hover:text-white transition-colors">Launch Project <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                        <a href="${project.url}" target="_blank" class="text-[10px] text-blue-500 hover:text-blue-400 font-bold uppercase tracking-wider transition-colors">Launch Project <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
                     </div>
                     ${project.details.map(detail => `
                         <div class="pointer-item">
