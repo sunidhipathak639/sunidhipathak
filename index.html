@@ -6,7 +6,6 @@
     <title>Sunidhi Pathak | Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fonts: Mrs Saint Delafield for the signature, Inter for the modern UI -->
     <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
@@ -23,7 +22,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Natural Hand-written Signature Style */
         .signature {
             font-family: 'Mrs Saint Delafield', cursive;
             background: linear-gradient(180deg, #ffffff 20%, #71717a 100%);
@@ -32,160 +30,241 @@
             line-height: 1.2;
         }
 
-        /* Professional Matte Card */
-        .link-row {
+        .project-card {
             background-color: var(--matte-card);
             border: 1px solid var(--matte-border);
-            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            opacity: 0;
-            animation: slideUp 0.8s ease-out forwards;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .link-row:hover {
+        .project-card:hover {
             border-color: #333;
-            background-color: #141414;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
         }
 
-        /* Icon Finish */
+        .project-card.active {
+            border-color: #444;
+            background-color: #121212;
+        }
+
+        .content-area {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            font-size: 13px;
+        }
+
+        .project-card.active .content-area {
+            max-height: 600px;
+            padding-bottom: 1.5rem;
+        }
+
+        .project-card.active .chevron {
+            transform: rotate(90deg);
+        }
+
+        .pointer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #888;
+        }
+
+        .pointer-item i {
+            font-size: 8px;
+            margin-top: 6px;
+            color: #555;
+        }
+
         .icon-box {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: #000;
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             border: 1px solid #222;
-            flex-shrink: 0;
-        }
-
-        .icon-box img {
-            width: 22px;
-            height: 22px;
-            object-fit: contain;
-        }
-
-        .dummy-icon {
-            font-size: 16px;
-            color: #52525b;
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Staggered load logic */
-        .stagger { animation-delay: calc(var(--i) * 0.07s); }
-
-        .social-link {
-            color: #52525b;
-            transition: all 0.3s ease;
-        }
-        .social-link:hover {
-            color: #fff;
-            transform: translateY(-2px);
-        }
+        .stagger { animation: slideUp 0.6s ease-out forwards; opacity: 0; }
     </style>
 </head>
 <body class="py-12 px-6">
 
-    <div class="max-w-[400px] mx-auto">
+    <div class="max-w-[450px] mx-auto">
         
-        <!-- Identity Header -->
         <header class="text-center mb-12">
             <div class="relative inline-block mb-4">
-                <div class="w-24 h-24 rounded-full p-[1px] bg-zinc-800 shadow-2xl">
+                <div class="w-20 h-20 rounded-full p-[1px] bg-zinc-800">
                     <img src="https://my-portfolio-phi-lime.vercel.app/asset/model_bw.png" 
                          alt="Sunidhi Pathak" 
-                         class="w-full h-full rounded-full object-cover grayscale brightness-75 hover:brightness-100 transition-all duration-700">
+                         class="w-full h-full rounded-full object-cover grayscale brightness-90">
                 </div>
             </div>
-            
-            <!-- Natural Signature -->
             <h1 class="text-6xl signature py-2">Sunidhi Pathak</h1>
+            <p class="text-zinc-600 text-[9px] uppercase tracking-[0.6em] font-medium mb-8">Software Engineer</p>
             
-            <p class="text-zinc-600 text-[9px] uppercase tracking-[0.6em] font-medium mb-8">
-                Software Engineer
-            </p>
-            
-            <div class="flex justify-center gap-10">
-                <a href="https://github.com/sunidhipathak639" target="_blank" class="social-link"><i class="fab fa-github text-xl"></i></a>
-                <a href="https://www.linkedin.com/in/sunidhipathak639" target="_blank" class="social-link"><i class="fab fa-linkedin-in text-xl"></i></a>
-                <a href="https://www.instagram.com/sunidhipathak19/" target="_blank" class="social-link"><i class="fab fa-instagram text-xl"></i></a>
+            <div class="flex justify-center gap-8">
+                <a href="https://github.com/sunidhipathak639" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-github text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/sunidhipathak639" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="https://www.instagram.com/sunidhipathak19/" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
             </div>
         </header>
 
-        <!-- Project Links Stack -->
         <div class="space-y-3" id="links">
-            <!-- Injected via Script -->
+            <!-- Projects Injected via JS -->
         </div>
 
-        <!-- Professional Tagline -->
         <footer class="mt-20 text-center">
-            <p class="text-[8px] text-zinc-800 uppercase tracking-[0.8em] font-light">
-                Built with Excellence
-            </p>
+            <p class="text-[8px] text-zinc-800 uppercase tracking-[0.8em]">Architecting Data-Driven Systems</p>
         </footer>
     </div>
 
     <script>
         const projectData = [
-            { name: "Mind HUB", url: "https://www.mymindhub.com/" },
-            { name: "Uptik Solution", url: "https://www.uptiksolution.com" },
-            { name: "Upgrade Masterclass", url: "https://demo-upgrad.kurage.in/" },
-            { name: "Mindstep Leadership", url: "https://www.mindstepleadership.com/" },
-            { name: "NCGRP Sweden", url: "https://www.ncgrp.se/", forceIcon: "fa-solid fa-building-shield" },
-            { name: "EKAA", url: "https://ekaa.vercel.app/", forceIcon: "fa-solid fa-spa" },
-            { name: "MORF", url: "https://morf-new.vercel.app/customiser" },
-            { name: "Smallscreen Marketing", url: "https://www.smallscreenmarketing.com/" },
-            { name: "Join With Me", url: "https://joinwithme.in/" },
-            { name: "Norliza", url: "https://www.norliza.com/" },
-            { name: "Speakers Solution", url: "https://www.speakerssolutions.com.au/" }
+            { 
+                name: "Attendance Rocket", 
+                url: "https://attendance-rocket.vercel.app/",
+                tech: "Next.js • Payload CMS • PostgreSQL",
+                details: [
+                    "Architected a scalable relational database schema using Payload CMS to handle high-frequency attendance logging and user role hierarchies.",
+                    "Developed an interactive administrative dashboard for real-time visualization of workforce presence and historical attendance trends.",
+                    "Optimized complex data queries to generate automated weekly/monthly reports, reducing server processing time during data exports.",
+                    "Implemented secure authentication and precise RBAC (Role-Based Access Control) to protect sensitive employee records and audit trails."
+                ]
+            },
+            { 
+                name: "Mind HUB", 
+                url: "https://www.mymindhub.com/",
+                tech: "Next.js • Payload CMS",
+                details: [
+                    "Engineered a dynamic content delivery system using Payload CMS to manage thousands of modular learning resources.",
+                    "Utilized Next.js Incremental Static Regeneration (ISR) to deliver high-speed performance while maintaining real-time data freshness.",
+                    "Built a customized search and filter engine using relational data fields to improve user content discovery by 60%.",
+                    "Integrated behavioral tracking analytics to monitor user journey data and optimize learning path flows."
+                ]
+            },
+            { 
+                name: "Uptik Solution", 
+                url: "https://www.uptiksolution.com",
+                tech: "Next.js • Node.js",
+                details: [
+                    "Designed high-conversion lead capture systems with automated data pipeline integration into centralized marketing CRMs.",
+                    "Developed custom middleware in Node.js to sanitize and validate incoming form data streams, ensuring database integrity.",
+                    "Maximized frontend performance by optimizing the critical rendering path, resulting in superior Core Web Vitals scores.",
+                    "Built a flexible, data-driven UI component library to enable rapid deployment of standardized analytical landing pages."
+                ]
+            },
+            { 
+                name: "Upgrade Masterclass", 
+                url: "https://demo-upgrad.kurage.in/",
+                tech: "Next.js • Strapi CMS",
+                details: [
+                    "Orchestrated a large-scale headless CMS architecture via Strapi to manage extensive course catalogs and metadata.",
+                    "Implemented Server-Side Rendering (SSR) to ensure data-intensive pages remain SEO-friendly and highly performant.",
+                    "Developed a sophisticated filtering logic allowing users to navigate complex datasets based on specific instructor and course parameters.",
+                    "Automated asset management pipelines to optimize delivery of high-resolution educational media across diverse network speeds."
+                ]
+            },
+            { 
+                name: "NCGRP Sweden", 
+                url: "https://www.ncgrp.se/", 
+                forceIcon: "fa-solid fa-building-shield",
+                tech: "Next.js • Security-Driven",
+                details: [
+                    "Built a secure corporate infrastructure with an emphasis on data encryption and protected information dissemination.",
+                    "Mapped complex organizational data structures into a multilingual interface for international regulatory compliance.",
+                    "Engineered a resilient Node.js backend to handle concurrent requests while maintaining low-latency data access.",
+                    "Designed clean, data-focused dashboards to present security audit results and compliance status to stakeholders."
+                ]
+            },
+            { 
+                name: "MORF", 
+                url: "https://morf-new.vercel.app/customiser",
+                tech: "Next.js • Complex State Logic",
+                details: [
+                    "Developed a high-complexity product customizer utilizing advanced React state management to handle deep JSON object configurations.",
+                    "Synchronized frontend design state with backend data models in real-time, ensuring zero discrepancy in final manufacturing data.",
+                    "Optimized 3D-heavy data rendering to maintain smooth UI responsiveness during intensive user interactions.",
+                    "Architected a robust RESTful API layer to process, validate, and store custom design metadata."
+                ]
+            },
+            { 
+                name: "Join With Me", 
+                url: "https://joinwithme.in/",
+                tech: "Next.js • Real-time Data",
+                details: [
+                    "Implemented a low-latency social data feed using WebSockets and asynchronous Node.js event handling.",
+                    "Optimized database indexing and query performance to handle rapid growth in user interaction and engagement logs.",
+                    "Designed an intuitive user dashboard that translates complex social engagement metrics into easy-to-read charts.",
+                    "Developed scalable API endpoints capable of handling high-volume concurrent traffic during peak activity periods."
+                ]
+            },
+            { 
+                name: "Speakers Solution", 
+                url: "https://www.speakerssolutions.com.au/",
+                tech: "Next.js • Search Optimization",
+                details: [
+                    "Architected a high-performance talent search engine powered by multi-parameter filtering and sorting algorithms.",
+                    "Minimized client-side JavaScript overhead by offloading data processing to Next.js Server Components.",
+                    "Developed a seamless booking data pipeline that bridges user frontends with internal management systems.",
+                    "Enhanced perceived performance using sophisticated data-loading patterns like skeleton screens and pre-fetching logic."
+                ]
+            }
         ];
 
         const linkContainer = document.getElementById('links');
 
         projectData.forEach((project, index) => {
             const domain = new URL(project.url).hostname;
-            const a = document.createElement('a');
-            a.href = project.url;
-            a.target = "_blank";
-            a.className = "link-row stagger flex items-center p-3 rounded-xl group";
-            a.style.setProperty('--i', index + 1);
+            const card = document.createElement('div');
+            card.className = "project-card stagger rounded-xl group";
+            card.style.animationDelay = `${index * 0.1}s`;
             
             let iconMarkup;
-            
             if(project.forceIcon) {
-                // Professional dummy icons for those missing favicons
-                iconMarkup = `<i class="${project.forceIcon} dummy-icon group-hover:text-zinc-200"></i>`;
+                iconMarkup = `<i class="${project.forceIcon} text-zinc-500 text-sm"></i>`;
             } else {
-                // Smart favicon loader
                 const iconUrl = `https://icons.duckduckgo.com/ip3/${domain}.ico`;
-                iconMarkup = `<img src="${iconUrl}" onerror="handleIconError(this)" alt="">`;
+                iconMarkup = `<img src="${iconUrl}" class="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" onerror="this.src='https://cdn-icons-png.flaticon.com/512/1005/1005141.png'">`;
             }
 
-            a.innerHTML = `
-                <div class="icon-box">
-                    ${iconMarkup}
+            card.innerHTML = `
+                <div class="flex items-center p-4" onclick="toggleAccordion(this.parentElement)">
+                    <div class="icon-box">${iconMarkup}</div>
+                    <div class="ml-4 flex-grow">
+                        <h3 class="text-[13px] font-medium text-zinc-400 group-hover:text-white transition-colors">${project.name}</h3>
+                        <p class="text-[9px] text-zinc-600 font-mono tracking-tighter uppercase">${project.tech}</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-[10px] text-zinc-700 chevron transition-transform duration-300"></i>
                 </div>
-                <div class="ml-4 flex-grow">
-                    <h3 class="text-[13px] font-medium text-zinc-500 group-hover:text-white transition-colors">${project.name}</h3>
+                <div class="content-area px-14">
+                    <div class="mb-4">
+                        <a href="${project.url}" target="_blank" class="text-[10px] text-zinc-400 hover:text-white transition-colors">Launch Project <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                    </div>
+                    ${project.details.map(detail => `
+                        <div class="pointer-item">
+                            <i class="fa-solid fa-circle"></i>
+                            <p>${detail}</p>
+                        </div>
+                    `).join('')}
                 </div>
-                <i class="fa-solid fa-chevron-right text-[8px] text-zinc-900 group-hover:text-zinc-400 mr-2 transition-all"></i>
             `;
-            linkContainer.appendChild(a);
+            linkContainer.appendChild(card);
         });
 
-        function handleIconError(img) {
-            // Fallback for missing logos
-            const box = img.parentElement;
-            box.innerHTML = `<i class="fa-solid fa-code dummy-icon"></i>`;
+        function toggleAccordion(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+            if (!isActive) element.classList.add('active');
         }
     </script>
-
 </body>
 </html>
